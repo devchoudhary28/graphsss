@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+<div id="myPlot" style="width:100%;max-width:700px" class="dev"></div>
+
+<div class="container" id="containers">
+  <label for=""> Title</label>
+  <input type="text" id="title" >
+  <label for="">Enter Item</label>
+  <input type="text" id="item1">
+  <label for="">Enter Value</label>
+  <input type="text" id="item2">
+  
+<button onclick="myfunction()" class="button"> see result</button>
+</div>
+
+<script>
+  function myfunction(){
+    var val1=[ ];
+    
+    var val2=[ ];
+  var lists1= document.getElementById("item1").value; 
+  val1=lists1.split(' '); 
+ 
+//    document.write(val1[0]);
+  var lists2=document.getElementById("item2").value;
+  val2=lists2.split(' ');
+//  document.write(val2);
+var xArray = val1;
+var yArray = val2;
+
+
+
+var layout = {title : document.getElementById("title")};
+
+var data = [{labels:xArray, values:yArray, type:"pie"}];
+document.getElementById("containers").style.display="none";
+
+
+Plotly.newPlot("myPlot", data, layout);
+  };
+</script>
+
+</body>
+</html>

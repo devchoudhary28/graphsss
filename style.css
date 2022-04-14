@@ -1,0 +1,36 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+.container{
+    display:inline-flex;
+    flex-direction: column;
+    height: 250px;
+    width: 500px;
+    justify-content: center;
+    
+    background-color: rgb(218, 195, 195);
+    position: relative;
+    left: 530px;
+    top: 150px;
+}
+input{
+    margin: 10px;
+}  
+
+button{
+    margin: 10px;
+
+}
+
+label{
+    text-align: center;
+}
+.dev{
+    justify-content: center;
+    text-align: center;
+    position:relative;
+    top: 100px;
+    left: 300px;
+    background-color: darkgray;
+}

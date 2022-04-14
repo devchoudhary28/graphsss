@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body style="background-color: rgba(204, 160, 160, 0.829);" > 
+
+<div id="myPlot" style="width:50%;text-align: center;  border-radius: 20px; " class="dev"></div>
+<div class="container" id="containers" style="width: 25%;  border-radius: 30px;">
+<label for="" class="label"> Enter your equation in X</label>
+<input type="text" name="" id="dev"  style="border-radius: 8px; margin-top: 5px;" >
+<button onclick="myfunction()" id="button" class="button" style="border-radius: 8px; margin-top: 5px;"  >see result</button>
+</div>
+<!-- <p  id="show" ></p> -->
+<script>
+//     var a= "";
+//     function myfunction(){
+//  var a=  document.getElementById("dev").value ;
+//  document.getElementById("show").innerHTML=a;
+//     };
+    
+function myfunction(){
+var exp = document.getElementById("dev").value;
+// var exp=inp.toString();
+
+// Generate values
+var xValues = [];
+var yValues = [];
+for (var x = -10; x <= 10; x += 1) {
+  xValues.push(x);
+  yValues.push(eval(exp));
+}
+
+// Define Data
+var data = [{
+  x: xValues,
+  y: yValues,
+  mode:"lines"
+}];
+
+// Define Layout
+var layout = {title: "y = " + exp};
+
+// document.getElementById("dev").style.display="none";
+// document.getElementById("button").style.display="none";
+// document.getElementById("label").style.display="none";
+document.getElementById("containers").style.display="none";
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+
+}
+</script>
+</body>
+</html>
+<!-- max-width:700px; -->
